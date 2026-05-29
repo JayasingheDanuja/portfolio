@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Linkedin, ArrowRight } from "lucide-react";
+import { Mail, LinkedinIcon, ArrowRight } from "lucide-react";
 
 const socials = [
   {
@@ -15,7 +15,7 @@ const socials = [
     label: "LinkedIn",
     value: "linkedin.com/in/danuja",
     href: "https://linkedin.com/",
-    icon: <Linkedin className="w-5 h-5" />,
+    icon: <LinkedinIcon className="w-5 h-5" />,
     primary: false,
   },
 ];
