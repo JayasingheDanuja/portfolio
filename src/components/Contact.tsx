@@ -1,34 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Linkedin, ArrowRight } from "lucide-react";
-
-const socials = [
-  {
-    label: "Email",
-    value: "jayasinghedanuja@gmail.com",
-    href: "mailto:jayasinghedanuja@gmail.com",
-    icon: <Mail className="w-5 h-5" />,
-    primary: true,
-  },
-  {
-    label: "LinkedIn",
-    value: "linkedin.com/in/danuja",
-    href: "https://linkedin.com/",
-    icon: <Linkedin className="w-5 h-5" />,
-    primary: false,
-  },
-];
+import { Mail, ArrowRight, ExternalLink } from "lucide-react";
 
 export default function Contact() {
   return (
     <section id="contact" className="py-32 relative border-t border-border">
-      {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-accent/6 rounded-full blur-[120px] -z-10 pointer-events-none" />
 
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
-          {/* Label */}
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +19,6 @@ export default function Contact() {
             Get In Touch
           </motion.span>
 
-          {/* Heading */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +41,6 @@ export default function Contact() {
             in mind or just want to say hi — I'll get back to you!
           </motion.p>
 
-          {/* CTA buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -69,34 +48,26 @@ export default function Contact() {
             transition={{ delay: 0.15 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            {socials.map((s) =>
-              s.primary ? (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  className="group flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-full bg-foreground text-background font-medium hover:bg-foreground/90 transition-all"
-                >
-                  {s.icon}
-                  Say Hello
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-              ) : (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-full border border-border bg-muted/10 hover:bg-muted/30 hover:border-accent/30 transition-all"
-                >
-                  {s.icon}
-                  LinkedIn
-                </a>
-              )
-            )}
+            <a
+              href="mailto:jayasinghedanuja@gmail.com"
+              className="group flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-full bg-foreground text-background font-medium hover:bg-foreground/90 transition-all"
+            >
+              <Mail className="w-4 h-4" />
+              Say Hello
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href="https://linkedin.com/in/danuja-jayasinghe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-full border border-border bg-muted/10 hover:bg-muted/30 hover:border-accent/30 transition-all"
+            >
+              <ExternalLink className="w-4 h-4" />
+              LinkedIn
+            </a>
           </motion.div>
         </div>
 
-        {/* Footer */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
