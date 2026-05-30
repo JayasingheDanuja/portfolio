@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { Palette, PenTool, Layout, Box } from "lucide-react";
 
 const skills = [
@@ -35,7 +36,7 @@ const containerVariants: Variants = {
 
 const cardVariants: Variants = {
   hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] } },
+  show: { opacity: 1, y: 0 },
 };
 
 export default function About() {
@@ -43,12 +44,11 @@ export default function About() {
     <section id="about" className="py-28 relative">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left: Bio */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.7 }}
           >
             <span className="text-xs font-semibold tracking-widest text-accent uppercase mb-4 block">
               About Me
@@ -70,7 +70,6 @@ export default function About() {
             </p>
           </motion.div>
 
-          {/* Right: Skill cards */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -82,6 +81,7 @@ export default function About() {
               <motion.div
                 key={index}
                 variants={cardVariants}
+                transition={{ duration: 0.5 }}
                 className="group p-6 rounded-2xl border border-border bg-muted/10 hover:bg-muted/30 hover:border-accent/30 transition-all duration-300 cursor-default"
               >
                 <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-4 group-hover:bg-accent/20 transition-colors">
