@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
-import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -49,14 +48,14 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-wrap gap-4 mt-2"
           >
-            <a
+            
               href="#work"
               className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background font-medium hover:bg-foreground/90 transition-all hover:gap-3"
             >
               View My Work
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
-            <a
+            
               href="/Danuja_Jayasinghe_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
@@ -79,13 +78,10 @@ export default function Hero() {
           <div className="absolute inset-8 rounded-full border border-accent/10 animate-[spin_12s_linear_infinite]" />
 
           <div className="absolute inset-12 rounded-full overflow-hidden bg-muted ring-1 ring-border">
-            <Image
+            <img
               src="/images/pfp_1.png"
               alt="Danuja Jayasinghe — UI/UX Designer"
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 768px) 280px, 380px"
+              className="w-full h-full object-cover"
             />
           </div>
 
