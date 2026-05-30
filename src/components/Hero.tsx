@@ -4,30 +4,18 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 import Image from "next/image";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut", delay },
-  }),
-};
-
 export default function Hero() {
   return (
     <section className="relative min-h-[95vh] flex items-center justify-center pt-20 overflow-hidden">
-      {/* Background glow blobs */}
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent/8 rounded-full blur-[140px] -z-10 pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-800/10 rounded-full blur-[120px] -z-10 pointer-events-none" />
 
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left: Text */}
         <div className="flex flex-col gap-6">
           <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            custom={0}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-muted/30 text-sm text-muted-foreground w-fit"
           >
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
@@ -35,10 +23,9 @@ export default function Hero() {
           </motion.div>
 
           <motion.h1
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            custom={0.1}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
             className="text-5xl lg:text-7xl font-bold tracking-tight leading-[1.05]"
           >
             Hi, I'm Danuja.{" "}
@@ -47,10 +34,9 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            custom={0.2}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg text-muted-foreground max-w-[480px] leading-relaxed"
           >
             Crafting intuitive digital experiences and high-fidelity prototypes
@@ -58,10 +44,9 @@ export default function Hero() {
           </motion.p>
 
           <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            custom={0.3}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-wrap gap-4 mt-2"
           >
             <a
@@ -83,19 +68,16 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right: Portrait */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          transition={{ duration: 1, delay: 0.2 }}
           className="relative aspect-square max-w-[460px] mx-auto lg:ml-auto"
         >
-          {/* Spinning rings */}
           <div className="absolute inset-0 rounded-full border border-border/40 animate-[spin_25s_linear_infinite]" />
           <div className="absolute inset-4 rounded-full border border-border/25 animate-[spin_18s_linear_infinite_reverse]" />
           <div className="absolute inset-8 rounded-full border border-accent/10 animate-[spin_12s_linear_infinite]" />
 
-          {/* Photo */}
           <div className="absolute inset-12 rounded-full overflow-hidden bg-muted ring-1 ring-border">
             <Image
               src="/images/pfp_1.jpg"
@@ -107,7 +89,6 @@ export default function Hero() {
             />
           </div>
 
-          {/* Floating badge */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -128,7 +109,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -138,7 +118,7 @@ export default function Hero() {
         <span>Scroll</span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
           className="w-px h-8 bg-gradient-to-b from-muted-foreground/60 to-transparent"
         />
       </motion.div>

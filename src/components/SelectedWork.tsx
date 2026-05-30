@@ -94,7 +94,7 @@ export default function SelectedWork() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: index * 0.1,  }}
               className="group relative flex flex-col rounded-3xl bg-muted/10 border border-border overflow-hidden hover:border-border/80 transition-all duration-500"
             >
               {/* Gradient hover overlay */}

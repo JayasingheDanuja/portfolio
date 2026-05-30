@@ -61,7 +61,7 @@ export default function VisualDesign() {
           <div className="relative z-10 p-16 text-center">
             <motion.div
               animate={{ rotate: [0, 5, -5, 0] }}
-              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+              transition={{ repeat: Infinity, duration: 5,  }}
               className="text-6xl mb-6 select-none"
             >
               🎨
