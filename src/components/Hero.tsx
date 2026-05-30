@@ -80,7 +80,7 @@ export default function Hero() {
 
           <div className="absolute inset-12 rounded-full overflow-hidden bg-muted ring-1 ring-border">
             <Image
-              src="/images/pfp_1.jpg"
+              src="/images/pfp_1.png"
               alt="Danuja Jayasinghe — UI/UX Designer"
               fill
               className="object-cover"
